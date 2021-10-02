@@ -29,13 +29,7 @@ class Redis
         private
 
         def format_arguments(args)
-          args.map do |arg|
-            if arg.respond_to?(:encoding) && arg.encoding == Encoding::ASCII_8BIT
-              '<BINARY DATA>'
-            else
-              arg
-            end
-          end.join(' ')
+          args.join(' ')
         end
       end
     end
